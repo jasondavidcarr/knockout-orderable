@@ -16,6 +16,12 @@
     },
 
     compare: function (left, right) {
+	    if (typeof left === "undefined" || left === null) {
+            return -1;
+        }
+        if (typeof right === "undefined" || right === null) {
+            return 1;
+        }
         if (typeof left === 'string' || typeof right === 'string') {
             return left.localeCompare(right);
         }
